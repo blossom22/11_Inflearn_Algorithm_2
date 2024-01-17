@@ -14,12 +14,13 @@ def Count(capacity):
 
 n,m = map(int, sys.stdin.readline().split())
 song = list(map(int, sys.stdin.readline().split()))
+maxx =max(song)
 ans = 0 
 left = 1
 right = sum(song)
 while left<=right:
     mid = (left + right)//2
-    if Count(mid) <= m:
+    if mid>=maxx and Count(mid) <= m:       # mid>=maxx 의미: DVD용량은 가장 긴 노래보다는 크거나 같아야한다. 
         ans = mid
         right = mid - 1
     else:
