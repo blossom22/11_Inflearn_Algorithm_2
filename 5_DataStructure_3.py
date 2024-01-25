@@ -11,7 +11,7 @@ for x in a:
         if x=="(":      # 여는 괄호는 무조건 stack에 첨가
             stack.append(x)
         elif x=="*" or x=="/":      
-            # *, /는 자기들과 우선순위가 같은 놈들이 앞에 있다면, pop해서 앞에 있는 애들을 꺼내야함.
+            # *, /는 자기들보다 우선순위가 빠른 놈들이 앞에 있다면, pop해서 앞에 있는 애들을 꺼내야함. (같은 *,/사이라면, 먼저 스택에 있던 놈일수록 우선순위 앞섬)
             while stack and (stack[-1]=="*" or stack[-1]=='/'):
                 res += stack.pop()
             stack.append(x)     # 앞의 우선순위가 같은 놈들을 다 뽑았으면 자기자신은 stack에 첨가
