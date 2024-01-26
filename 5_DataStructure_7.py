@@ -32,7 +32,7 @@ for i in range(n):
             if x != dq.popleft():
                 print("#%d NO" %(i+1))
                 break
-    else:
+    else:   # 위의 for문을 break문에 안 걸리고 다 통과하면 여기 else문으로 넘어온다
         if len(dq)==0:
             print('#%d YES'%(i+1))
         else:
